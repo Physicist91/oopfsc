@@ -1,0 +1,53 @@
+Firstly, we created a new directory
+$ mkdir oop-sheet1; cd oop-sheet1
+
+Then we initialize a new git repository
+$ git init #initialize a new git repository
+
+We put a text file "a.c" (later renamed main.c to conform to submission rules),
+then add it to the files tracked by git and commit the changes.
+$ git add a.c #was later renamed to "main.c"
+$ git commit -m "First commit."
+
+Then we read the log file
+$ git log #to confirm that the commit was successful
+
+Then we checked the status of the working directory
+$ git status # the status was clean
+
+Next we changed something in the file, added and committed it,
+but then we reverted the commit.
+$ git add a.c
+$ git commit -m "Changed something."
+$ git reset HEAD~ #to undo the commit
+
+Then we edited the file again, and stash the changes
+$ git stash
+
+Then we created a new project on Gitlab,
+and used it to add "origin" to our repository, and pushed
+$ git remote add origin https://gitlab.com/kevin.sis/oop-sheet1.git
+$ git push origin master
+
+Then we got the private repository to Gitlab,
+(the project was later renamed to "OOPFSC2018-HussainSiswandi"),
+and use the URL to create another copy of the repository on our local machine
+$ git clone https://gitlab.com/kevin.sis/oop-sheet1.git
+
+Then we performed a quick edit to "a.c" on Gitlab and committed it directly.
+Then we changed a different line on our computer and pull
+$ git add a.c
+$ git commit -m "Changed on local."
+$ git pull
+
+Then we edited the line that was changed locally on Gitlab too
+We tried pulling on our local repository:
+$ git pull #this caused conflicts
+
+We then accepted our version
+$ git checkout --ours a.c
+$ git add a.c
+$ git commit -m "Accepting our version."
+
+Then we reapply the changes that have been stashed
+$ git stash pop
