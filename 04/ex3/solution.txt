@@ -1,0 +1,11 @@
+In the case of bar:
+v[0] is of type int* (pointer to int)
+bar() returns const int* (pointer to const int)
+This is illegal because we are trying to cast 'const int*' to 'int *'
+
+In the case of foo:
+int** is a pointer to a "pointer to int"
+const int** is a pointer to a "pointer of const int"
+Therefore, they are two pointers of different types, not just of different const-ness!
+What is allowed is casting T* into T const *, for e.g.
+casting "int**" to "int * const *": casting pointer to "pointer to int" into pointer to "const pointer to int"

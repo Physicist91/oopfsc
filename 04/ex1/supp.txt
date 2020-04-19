@@ -1,0 +1,17 @@
+List1 is:
+1
+2
+3
+Max value in the list: 3
+List2 is:
+7
+5
+6
+Max value in the list: 7
+Concatenated list is:
+1
+2
+3
+7
+5
+6

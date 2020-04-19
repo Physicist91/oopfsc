@@ -1,0 +1,16 @@
+1. Should be const, because they are not supposed to modify the object for which they are invoked:
+Node* first() const;
+Node* next(const Node* n) const;
+Should not be const, because they are supposed to modify the object:
+void append(int i);
+void insert(Node* n, int i);
+void erase(Node* n);
+
+2. This is implemented by having a private element "maximum" with the mutable specifier.
+The mutable specifier is necessary for our const function to modify the "cached" maximum value.
+If the list consists of million of nodes, traversing the list everytime a particular element is updated to find
+the maximum value is expensive. It's better to update the stored value when necessary.
+
+3. The printList() function has been added to main.cc. Output is in "supp.txt"
+
+4. The free function void append(List&, List&) is added in main.cc

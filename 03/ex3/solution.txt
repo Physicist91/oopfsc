@@ -1,0 +1,12 @@
+1. Why is get_int1 a reasonable method while get_int2 is unsuitable?
+get_int1 creates a reference to a memory allocated on the free store,
+while get_int2 creates a reference to a memory that's local to the function get_int2 itself.
+Therefore get_int1 will be useful but not get_int2.
+
+2. delete p; p = 0;
+is more sensible, because it frees up the memory of p allocated on the heap,
+then assign 0 to p, i.e. p now points to 0x0, which is the null pointer (in some implementation).
+On the contrary,
+p = 0; delete p;
+sets *p as value at memory location 0x0, then frees up that memory
+(but the allocated memory on the heap is still there!)

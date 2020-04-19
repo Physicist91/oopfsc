@@ -1,0 +1,25 @@
+i + 1 //correct,
+i int, return int
+
+*p //correct,
+return  int
+
+*p + 3 //correct,
+*p int, return int
+
+&i == p //incorrect if what you mean is "compare the value of i and the value pointed by p", this compares the memory locations
+
+i == *p //correct
+i int, *p int, return bool
+
+&p //valid, memory address of p
+
+p + 1 //incorrect if what you mean is "add 1 to the value pointed by p", this is 1 memory location away from memory address pointed by p
+
+&p == i //incorrect, this is comparing memory location of p with the value of i??
+
+**(&p) //correct
+equivalent to *p, return int
+
+*p + i > i //correct
+*p int, i int, return bool

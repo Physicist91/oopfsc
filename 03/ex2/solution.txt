@@ -1,0 +1,6 @@
+Destructor of a class C is accountable for..
+.. cleaning up components of objects of class C that are on the heap
+
+The destructor is a way to ensure that memory allocated on the heap (by the constructor)
+are deallocated. The destructor cleans up by freeing that memory using the
+*delete* operator.

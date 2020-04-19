@@ -1,0 +1,13 @@
+1. A pointer with value 0 is the null pointer.
+
+2. Node and List are implemented in exercise4/linked_list.cpp
+
+3. Node and List are implemented in exercise4/linked_list.cpp
+
+4. Tested, results are in supplement4.txt
+
+5. We have not defined a copy constructor, so
+a copying like that will not give the intended result, but only
+creating a new list2 with head and tail initialized to nullptr.
+If both lists are deleted by invoking the destructor, the memory on the heap
+,that the class elements head and tail point to, will be deallocated.

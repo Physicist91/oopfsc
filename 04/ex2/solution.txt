@@ -1,0 +1,16 @@
+1. The replacement to shared_ptr is done in ll.cp, main.cc, and ll.h
+
+2. When the list is deleted, the destructor will delete both head and tail.
+Deleting head will invoke the Node destructor that will delete its next pointer.
+As the next node is no longer pointed to, it will also be deleted.
+This happens recursively until the final node (i.e. tail) is deleted.
+In this case, the tail is deleted twice as a consequence (1st by the list destructor, 2nd by the node destructor)
+
+3. When the list is destroyed (i.e. the headers: head and tail), the second node still points to the first node.
+This is the problem: the doubly linked list creates cycles, in which
+we can trace paths via pointers from a node back to itself.
+When the list is destroyed, first the node that head points to will be destroyed.
+However, the next node will also destroy the previous node.
+That is, the same node will be deleted more than once, potentially corrupting the heap.
+If using shared_ptr in C++11, the reference counts of the nodes will not drop to zero (therefore the nodes are never destroyed)
+Therefore, weak_ptr is useful to break the circle.
