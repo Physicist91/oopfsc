@@ -1,0 +1,13 @@
+The class my_exception is implemented in "main.cc"
+When executing the program, the following error occured:
+
+libc++abi.dylib: terminating with uncaught exception of type my_exception: Foo exception
+Abort trap: 6
+
+The main reason for abortion is because when b is created it thows an exception.
+Then, it starts the stack unwinding trying to destroy all objects created so far,
+in order to handle the exception. In this case it destroys f which throws another exception.
+Since the program cannot manage an exception while it is doing stack unwinding, it aborts the execution.
+
+The section 15.2 point 3 of C++ standard is sensible because it means that an object cannot fail in its destruction,
+or at least if it fails, it must be recovered in place and not throw an exception outside of the destruction call.

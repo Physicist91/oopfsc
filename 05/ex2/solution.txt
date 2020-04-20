@@ -1,0 +1,13 @@
+main.cc" uses NumVector that implements inheritance from std::vector<double>
+"main2.cc" uses NumVector that doesn't use inheritance but store the values in a std::vector<double>
+
+*****************************************************************
+Both have the output:
+
+norm is 5.09902
+vector is [1, 3, 4]
+*****************************************************************
+
+Both have compilation errors at
+the method resize, and
+the free function vectorTest (test.cc)

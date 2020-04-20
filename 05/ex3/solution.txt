@@ -1,0 +1,4 @@
+The error is in line 30: test(c);
+c is of type C, passing c to the function test causes it to be
+converted to const C, but const C can't be cast into const A,
+because C inherits B privately.

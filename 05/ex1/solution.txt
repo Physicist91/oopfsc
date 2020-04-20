@@ -1,0 +1,20 @@
+I have written a test program for this purpose. The output is
+
+Sizeof Empty: 1
+Sizeof EmptyDerived: 1
+Sizeof NonEmpty: 1
+Address of a: 0x7ffee6417ab8
+Sizeof a: 1
+Address of b: 0x7ffee6417abc
+Sizeof b: 4
+Sizeof b2: 1
+
+As we can see, the sizes of Empty, EmptyDerived, and NonEmpty are all the same, i.e. 1.
+
+In the struct Composite, if Empty wouldn't claim any storage space, the other class member may occupy the same memory address.
+In particular, c.a and c.b would end up at the same address.
+
+In the struct Composite:
+sizeof(a)=1
+sizeof(b)=4 //if b in int
+sizeof(b)=1 //if b is char

@@ -1,0 +1,8 @@
+The Java code simulates a game of catch between a child and a parent. However, unlike the real game,
+this version has the parent/child throw and catch the ball at the same time during his turn.
+However, the recursive "aim" method will cause an infinite recursion and hence a stack overflow.
+
+The order of execution is written in the in-code comments.
+
+Although it may be a valid C++ program, the program does not do anything meaningful
+and will crash after stack overflow.
