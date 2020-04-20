@@ -1,6 +1,6 @@
-# oopfsc
+# Object Oriented Programming for Scientific Computing
 
-Object Oriented Programming for Scientific Computing.
+Glossary:
 - A *class* consists of methods and attributes
 - An *object* is an instance of a class
 - *Attributes* describe or characterise an object/class
